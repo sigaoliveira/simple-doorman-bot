@@ -144,7 +144,7 @@ client.on("message", async message => {
   if(command === "recon") {
     // Testing some user catchable data - with errors >>> need to fix
 	message.reply("Scanning....");
-    message.channel.send(`You are ${message.author.tag}, ID# {message.author.id}`)
+    message.channel.send(`You are ${message.author.tag}, ID# ${message.author.id}`)
   }
 });
 
