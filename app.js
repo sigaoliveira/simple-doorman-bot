@@ -69,6 +69,15 @@ client.on("message", async message => {
     message.channel.send(sayMessage);
   }
   
+  if(command === "invite") {
+    // makes the bot share its own invitation URL 
+    const BotURL = "https://discordapp.com/oauth2/authorize?client_id=407721409759019008&permissions=8&scope=bot";
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing. (disabled)
+    // message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(BotURL);
+  }
+  
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
