@@ -140,6 +140,12 @@ client.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+  
+  if(command === "recon") {
+    // Testing some user catchable data
+	message.reply("Scanning....");
+    message.channel.send('You are ${message.author.tag}, ID# {message.author.id}')
+  }
 });
 
 client.login(config.token);
