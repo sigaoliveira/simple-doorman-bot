@@ -163,8 +163,8 @@ client.on("message", async message => {
   if(command === "recon") {
     // Testing some user catchable data - with errors >>> need to fix
 	message.reply("Scanning....");
-    message.channel.send(`You are ${message.author.tag}, ID# ${GuildMember.id}`)
-    message.channel.send(`Who knows if that will work huh @<${GuildMember.id}>`)
+    message.send(`You are ${message.author.tag}, ID# ${GuildMember.id}`)
+    message.send(`Who knows if that will work huh @<${GuildMember.id}>`)
   }
 });
 
