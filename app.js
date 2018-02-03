@@ -158,13 +158,18 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
   
-  if(command === "recon") {
+  if(command === "whois") {
     // Testing some user catchable data - with errors >>> need to fix
+	let member = message.mentions.members.first();
+	if(!member)
+	  return message.reply("Please mention a valid member of this server");
+
 	message.reply("Scanning....");
-    message.send(`You are ${message.author.tag}, ID# ${GuildMember.id}`)
-    message.send(`Who knows if that will work huh @<${GuildMember.id}>`)
+    message.channel.sendMessage(`User ID# member.id`)
+    message.channel.send(`Nickname member.nickname`)
   }
-    if(command === "nick") {
+  
+	if(command === "nick") {
 		let member = message.mentions.members.first();
 		if(!member)
 		  return message.reply("Please mention a valid member of this server");
@@ -177,6 +182,7 @@ client.on("message", async message => {
 		// Now, time for a swift kick in the nuts!
 		await member.setNickname(newNick)
 		  .catch(error => message.reply(`Sorry ${message.author} I couldn't change the nickname because of : ${error}`));
+		message.reply("Nickname change successfully completed")
 	}
 });
 
