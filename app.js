@@ -89,8 +89,6 @@ client.on("message", async message => {
   }
   
   if(command === "invite") {
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing. (disabled)
-    // message.delete().catch(O_o=>{});
     // makes the bot share its own invitation URL 
     message.reply("thanks for your interest! Please find below my invitation link (spread the word! :)):");
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=407721409759019008&permissions=8&scope=bot");
@@ -166,6 +164,20 @@ client.on("message", async message => {
     message.send(`You are ${message.author.tag}, ID# ${GuildMember.id}`)
     message.send(`Who knows if that will work huh @<${GuildMember.id}>`)
   }
+    if(command === "nick") {
+		let member = message.mentions.members.first();
+		if(!member)
+		  return message.reply("Please mention a valid member of this server");
+		
+		// slice(1) removes the first part, which here should be the user mention!
+		let newNick = args.slice(1).join(' ');
+		if(!newNick)
+		  return message.reply("Please indicate the new nickname for the user");
+		
+		// Now, time for a swift kick in the nuts!
+		await member.setNickname(newNick)
+		  .catch(error => message.reply(`Sorry ${message.author} I couldn't change the nickname because of : ${error}`));
+	}
 });
 
 client.login(config.token);
