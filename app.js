@@ -165,8 +165,9 @@ client.on("message", async message => {
 	  return message.reply("Please mention a valid member of this server");
 
 	message.reply("Scanning....");
-    message.channel.sendMessage(`User ID# ${member.id}`)
-    message.channel.send(`Nickname ${member.nickname}`)
+    message.channel.send(`User ID#: ${member.id}`)
+    message.channel.send(`Nickname: ${member.nickname}`)
+	message.channel.send(`Username: ${user.username}`)
   }
   
 	if(command === "nick") {
