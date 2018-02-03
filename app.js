@@ -31,6 +31,25 @@ client.on("guildDelete", guild => {
   client.user.setGame(`on ${client.guilds.size} servers`);
 });
 
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'lounge');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to SNOWSZ alliances, ${member}! In order to have access to all channels, you must use the following command +freeze Your Nickname (as it is in the game; for example: +freeze Jon Snow)`);
+});
+
+// Create an event listener for removed guild members
+client.on('guildMemberRemove', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'lounge');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`I have a tender spot in my heart for cripples, bastards and broken things, still ${member} decided to leave`);
+});
 
 client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
@@ -144,8 +163,8 @@ client.on("message", async message => {
   if(command === "recon") {
     // Testing some user catchable data - with errors >>> need to fix
 	message.reply("Scanning....");
-    message.channel.send(`You are ${message.author.tag}, ID# ${message.author.id}`)
-    message.channel.send("Who knows if that will work huh @${message.author.id}")
+    message.channel.send(`You are ${message.author.tag}, ID# ${GuildMember.id}`)
+    message.channel.send(`Who knows if that will work huh @<${GuildMember.id}>`)
   }
 });
 
