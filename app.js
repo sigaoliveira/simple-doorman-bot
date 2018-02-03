@@ -165,7 +165,7 @@ client.on("message", async message => {
 	  return message.reply("Please mention a valid member of this server");
 	let mentionTag = message.server.roles.get('name', 'everyone');
 	message.reply("Scanning....");
-    message.channel.send(`User ID#: ${member.id} \n Nickname: ${member.nickname} \n Username: ${member.user.username}`)
+    message.channel.send(`User ID#: ${member.id}` \n `Nickname: ${member.nickname}` \n `Username: ${member.user.username}`)
     // message.channel.send(`User ID#: ${member.id} \n Nickname: ${member.nickname} \n Username: ${member.user.username} ${mentionTag}`)
   }
   
