@@ -38,7 +38,7 @@ client.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Welcome to SNOWSZ alliances, ${member}! In order to have access to all channels, you must use the following command +freeze Your Nickname (as it is in the game; for example: +freeze Jon Snow)`);
+  channel.send(`Welcome to SNOWSZ alliances, ${member}! In order to have access to all channels, you must use the following command +freeze Your Nickname (as it is in the game; for example: \n +freeze Jon Snow)`);
 });
 
 // Create an event listener for removed guild members
@@ -163,11 +163,9 @@ client.on("message", async message => {
 	let member = message.mentions.members.first();
 	if(!member)
 	  return message.reply("Please mention a valid member of this server");
-
+	let mentionTag = message.server.roles.get('name', 'everyone');
 	message.reply("Scanning....");
-    message.channel.send(`User ID#: ${member.id}`)
-    message.channel.send(`Nickname: ${member.nickname}`)
-	message.channel.send(`Username: ${member.user.username}`)
+    message.channel.send(`User ID#: ${member.id} \n Nickname: ${member.nickname} \n Username: ${member.user.username} ${mentionTag}`)
   }
   
 	if(command === "nick") {
