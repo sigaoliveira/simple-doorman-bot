@@ -179,7 +179,7 @@ client.on("message", async message => {
 		if(!newNick)
 		  return message.reply("Please indicate the new nickname for the user");
 		
-		// Now, time for a swift kick in the nuts!
+		// Try to update user nickname
 		await member.setNickname(newNick)
 		  .catch(error => message.reply(`Sorry ${message.author} I couldn't change the nickname because of : ${error}`));
 		message.reply("Nickname change successfully completed")
@@ -188,7 +188,7 @@ client.on("message", async message => {
   if(command === "freeze") {
     // Update users' nick and ask needed questions for credentials verification purposes 
     const newNick = args.join(" ");
-	let member = message.author;
+	//let member = message.author;
 	const channel = message.guild.channels.find("name", "checkpoint")
 	//let mentionTag = message.guild.roles.get('name', 'Administrator')
 	
@@ -196,7 +196,7 @@ client.on("message", async message => {
 		return message.reply("Error: missing argument - please repeat the command adding your in game nickname");
 		
 	// Update user nick and send message about it
-	await member.setNickname(newNick)
+	await message.member.setNickname(newNick)
 		.catch(error => message.reply(`Sorry ${message.author} I couldn't change your nickname because of : ${error}`));
 	message.channel.send(`Hello ${message.author}, we’ve updated your nick to reflect the one you use in the game (don’t worry: it will not change your nickname in other servers). You are not allowed to type on #lounge anymore. \n We need some info from you to grant you all due permissions: \n 1. Are you already using your in game nickname? (everyone in this server should be using the same nick as it is on the game. If yours is still different, please tell us what it is) \n \n 2. Are you SNOWS or SNOWZ? \n \n 3. Who is your direct liege? (you are bannerman of whom?) \n \n @everyone`);
   }	
