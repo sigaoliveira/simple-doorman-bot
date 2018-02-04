@@ -190,7 +190,7 @@ client.on("message", async message => {
     const newNick = args.join(" ");
 	const member = message.author;
 	const channel = message.guild.channels.find("name", "checkpoint")
-	let mentionTag = message.guild.roles.get('name', 'Administrator')
+	//let mentionTag = message.guild.roles.get('name', 'Administrator')
 	
 	if(!newNick)
 		return message.reply("Error: missing argument - please repeat the command adding your in game nickname");
@@ -198,7 +198,7 @@ client.on("message", async message => {
 	// Update user nick and send message about it
 	await member.setNickname(newNick)
 		.catch(error => message.reply(`Sorry ${message.author} I couldn't change your nickname because of : ${error}`));
-	message.channel.send(`Hello ${message.author}, we’ve updated your nick to reflect the one you use in the game (don’t worry: it will not change your nickname in other servers). You are not allowed to type on #lounge anymore. \n We need some info from you to grant you all due permissions: \n 1. Are you already using your in game nickname? (everyone in this server should be using the same nick as it is on the game. If yours is still different, please tell us what it is) \n \n 2. Are you SNOWS or SNOWZ? \n \n 3. Who is your direct liege? (you are bannerman of whom?) \n \n ${mentionTag}`);
+	message.channel.send(`Hello ${message.author}, we’ve updated your nick to reflect the one you use in the game (don’t worry: it will not change your nickname in other servers). You are not allowed to type on #lounge anymore. \n We need some info from you to grant you all due permissions: \n 1. Are you already using your in game nickname? (everyone in this server should be using the same nick as it is on the game. If yours is still different, please tell us what it is) \n \n 2. Are you SNOWS or SNOWZ? \n \n 3. Who is your direct liege? (you are bannerman of whom?) \n \n @everyone`);
   }	
 	
 });
