@@ -201,7 +201,29 @@ client.on("message", async message => {
 		.catch(error => message.reply(`Sorry ${message.author} I couldn't change your nickname because of : ${error}`));
 	channel.send(`Hello ${message.author}, we’ve updated your nick to reflect the one you use in the game (don’t worry: it will not change your nickname in other servers). You are not allowed to type on #lounge anymore. \n We need some info from you to grant you all due permissions: \n \n 1. Are you already using your in game nickname? (everyone in this server should be using the same nick as it is on the game. If yours is still different, please tell us what it is) \n \n 2. Are you SNOWS or SNOWZ? \n \n 3. Who is your direct liege? (you are bannerman of whom?) \n \n @everyone`);
   }	
+
+  if(command === "focus") {
+
+    // slice(1) removes the first part, which here should be the user mention!
+    let alliance = args.slice(1).toUpperCase();
+    let castle = args.slice(1).join(' ');
 	
+    if(!alliance || alliance <> "S" || alliance <> "Z")
+      return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
+
+	if (alliance === "S") {
+		const channel = message.guild.channels.find('name', 'snows');
+	}
+	if (alliance === "Z") {
+		const channel = message.guild.channels.find('name', 'snowz');		
+	}
+  
+    var interval = setInterval (function () {
+    message.channel.send("123")}, 1 * 1000); 
+  
+	channel.send('The chests refresh in ' + OFFSET + ' minutes!');
+  }
+  
 });
 
 client.login(config.token);
