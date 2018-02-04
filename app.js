@@ -189,7 +189,7 @@ client.on("message", async message => {
     // Update users' nick and ask needed questions for credentials verification purposes 
     const newNick = args.join(" ");
 	//let member = message.author;
-	const channel = message.guild.channels.find("name", "checkpoint")
+	const channel = message.guild.channels.find('name', 'checkpoint');
 	//let mentionTag = message.guild.roles.get('name', 'Administrator')
 	
 	if(!newNick)
