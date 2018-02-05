@@ -205,12 +205,12 @@ client.on("message", async message => {
   if(command === "focus") {
 
     // slice(1) removes the first part, which here should be the user mention!
-    let alliance = args.slice(1);
-	console.log(`This is the alliance: ${alliance}`) 
+    let alliance = args.slice(1).toString();
+	console.log(`This is the alliance: ${alliance} and ${args}`) 
     let castle = args.slice(1).join(' ');
 	console.log(`This is the castle: ${castle}`)
 	
-    if(!alliance || alliance !== "S" || alliance !== "Z")
+    if(!alliance || alliance !== "s" || alliance !== "z")
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance === "S") {
