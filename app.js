@@ -218,22 +218,22 @@ client.on("message", async message => {
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance == "s") {
-		console.log(`This is the alliance: ${alliance}`);
+		//console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snows');
 		channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
 		setTimers = setInterval(function(){
 		  channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
-		},4 * 60 * 1000,(0));
+		},4 * 3600 * 1000,(0));
 		//console.log(`This is the channel: ${channel}`);
 	}
 	
 	if (alliance == "z") {
-		console.log(`This is the alliance: ${alliance}`);
+		//console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snowz');		
 		channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
 		setTimerz = setInterval(function(){
 		  channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
-		},4 * 60 * 1000,(1));
+		},4 * 3600 * 1000,(1));
 	}
 
 	//console.log(`This is the channel: ${channel}`);
@@ -244,7 +244,7 @@ client.on("message", async message => {
    
   }
   
-  if(command === "cleanfocus") {
+  if(command === "clearfocus") {
 	if (setTimers) clearInterval(setTimers);
 	if (setTimerz) clearInterval(setTimerz);
 	message.reply("All existent focus were removed")
