@@ -251,7 +251,7 @@ client.on("message", async message => {
   }
   
   if(command === "focuslist") {
-	TaskTimer.Reset;
+	timer.Reset;
 	console.log("all tasks were reset");
   }
   
