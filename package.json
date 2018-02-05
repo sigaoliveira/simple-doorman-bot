@@ -23,6 +23,5 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.3.0",
-    "tasktimer": "^1.0.0"
   }
 }
