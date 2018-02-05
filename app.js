@@ -208,9 +208,9 @@ client.on("message", async message => {
     let alliances = args[0];
 	
 	if (typeof alliances !== 'undefined') {
-		const alliance = alliances.toLowerCase();
+		let alliance = alliances.toLowerCase();
 	} else {
-		const alliance = "gusfraba";
+		let alliance = "gusfraba";
 	}
 	
 	console.log(`This is the alliance: ${alliance} and ${args}`);
