@@ -207,7 +207,7 @@ client.on("message", async message => {
     // slice(1) removes the first part, which here should be the user mention!
     let alliance = args[0];
 	console.log(`This is the alliance: ${alliance} and ${args}`) 
-    let castle = args.slice(1).join(' ');
+    let castle = args.slice(1).join(' ').shift().toLowerCase();
 	console.log(`This is the castle: ${castle}`)
 	
     if(!alliance || alliance !== "s" || alliance !== "z")
