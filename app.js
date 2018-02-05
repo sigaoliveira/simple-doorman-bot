@@ -219,13 +219,13 @@ client.on("message", async message => {
 
 	if (alliance == "s") {
 		console.log(`This is the alliance: ${alliance}`);
-		const channel = message.guild.channels.find('name', 'snows');
+		var channel = message.guild.channels.find('name', 'snows');
 		//console.log(`This is the channel: ${channel}`);
 	}
 	
 	if (alliance == "z") {
 		console.log(`This is the alliance: ${alliance}`);
-		const channel = message.guild.channels.find('name', 'snowz');		
+		var channel = message.guild.channels.find('name', 'snowz');		
 	}
 
 	console.log(`This is the channel: ${channel}`);	
