@@ -206,13 +206,10 @@ client.on("message", async message => {
 
     // slice(1) removes the first part, which here should be the user mention!
     let alliances = args[0];
+	if(!alliances)
+		return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 	
-	if (typeof alliances !== 'undefined') {
-		let alliance = alliances.toLowerCase();
-	} else {
-		let alliance = "gusfraba";
-	}
-	
+	let alliance = alliances.toLowerCase();	
 	console.log(`This is the alliance: ${alliance} and ${args}`);
     let castle = args.slice(1).join(' ');
 	console.log(`This is the castle: ${castle}`);
