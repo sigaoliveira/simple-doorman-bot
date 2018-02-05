@@ -229,12 +229,32 @@ client.on("message", async message => {
 	}
 
 	//console.log(`This is the channel: ${channel}`);
-	channel.send(`Hello @everyone! \n Before you go offline for a while, please make sure to reinforce ${castle}!`);	
+	channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);	
   
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
-  
+
+   var timer = new TaskTimer(3600000); // 1 hour in milliseconds
+
+	// Or add a task named "heartbeat" that runs every 5 ticks and a total of 10 times.
+	var task = {
+		name: alliance + castle,
+		tickInterval: 4, // ticks
+		totalRuns: 0, // unlimited times
+		callback: function (task) {
+			console.log(task.name + " task has run " + task.currentRuns + " times.");
+			channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
+		}
+	};
+	timer.addTask(task).start();
+   
   }
+  
+  if(command === "focuslist") {
+	  message.reply(`${TaskTimer.State}`);
+   
+  }
+  
 });
 
 client.login(config.token);
