@@ -23,7 +23,11 @@
   "license": "MIT",
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "discord.js": "^11.3.0",
+=======
+    "discord.js": "^11.3.0"
+>>>>>>> parent of bf18c71... installed TaskTimer module
 =======
     "discord.js": "^11.3.0"
 >>>>>>> parent of bf18c71... installed TaskTimer module

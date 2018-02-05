@@ -218,18 +218,23 @@ client.on("message", async message => {
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance == "s") {
-		//console.log(`This is the alliance: ${alliance}`);
+		console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snows');
 		//console.log(`This is the channel: ${channel}`);
 	}
 	
 	if (alliance == "z") {
-		//console.log(`This is the alliance: ${alliance}`);
+		console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snowz');		
 	}
 
+<<<<<<< HEAD
 	//console.log(`This is the channel: ${channel}`);
 	channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);	
+=======
+	console.log(`This is the channel: ${channel}`);	
+	channel.send(`The chests refresh ${castle} in minutes!`);	
+>>>>>>> parent of bf18c71... installed TaskTimer module
   
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
