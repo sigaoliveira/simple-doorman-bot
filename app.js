@@ -220,24 +220,31 @@ client.on("message", async message => {
 	if (alliance == "s") {
 		console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snows');
+		setTimers = setInterval(function(){
+		  channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
+		},4 * 3600 * 1000,(0));
 		//console.log(`This is the channel: ${channel}`);
 	}
 	
 	if (alliance == "z") {
 		console.log(`This is the alliance: ${alliance}`);
 		var channel = message.guild.channels.find('name', 'snowz');		
+		setTimerz = setInterval(function(){
+		  channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);
+		},4 * 3600 * 1000,(1));
 	}
 
 	//console.log(`This is the channel: ${channel}`);
-	channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);	
+	//channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);	
   
     //var interval = setInterval (function () {
-   // message.channel.send("123")}, 1 * 1000); 
+	//message.channel.send("123")}, 1 * 1000); 
    
   }
   
-  if(command === "focuslist") {
-
+  if(command === "cleanfocus") {
+	clearInterval(setTimers);
+	clearInterval(setTimerz);
   }
   
 });
