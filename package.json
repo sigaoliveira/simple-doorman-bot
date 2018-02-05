@@ -1,23 +1,19 @@
 {
-  "name": "simple-doorman-bot",
-  "name": "doorman-bot",
-  "version": "0.0.1",
-  "description": "",
-  "description": "An in-depth guide on deploying your Discord.js bot on Heroku",
+  "name": "brandon-startk-bot",
+  "version": "0.0.2",
+  "description": "My first bot",
   "main": "app.js",
   "engines": {
     "node": "8.x",
     "npm": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-	"start": "node app.js"
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sigaoliveira/simple-doorman-bot.git"
+    "url": "git+https://github.com/synicalsyntax/discord.js-heroku.git"
   },
   "keywords": [
     "heroku",
@@ -26,11 +22,10 @@
   "author": "DareDevil#0302",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sigaoliveira/simple-doorman-bot/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/sigaoliveira/simple-doorman-bot#readme",
+  "homepage": "",
   "dependencies": {
     "discord.js": "^11.3.0"
   }
-}
 }
