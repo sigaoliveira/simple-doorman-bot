@@ -214,14 +214,15 @@ client.on("message", async message => {
     let castle = args.slice(1).join(' ');
 	//console.log(`This is the castle: ${castle}`);
 	
-if(!alliance || (alliance !== "s" && alliance !== "z"))
+	if(!alliance || (alliance !== "s" && alliance !== "z"))
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance == "s") {
 		console.log(`This is the alliance: ${alliance}`);
 		const channel = message.guild.channels.find('name', 'snows');
-		console.log(`This is the channel: ${channel}`);
+		//console.log(`This is the channel: ${channel}`);
 	}
+	
 	if (alliance == "z") {
 		console.log(`This is the alliance: ${alliance}`);
 		const channel = message.guild.channels.find('name', 'snowz');		
@@ -232,9 +233,7 @@ if(!alliance || (alliance !== "s" && alliance !== "z"))
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
   
-
   }
-  
 });
 
 client.login(config.token);
