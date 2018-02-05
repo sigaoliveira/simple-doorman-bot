@@ -208,7 +208,7 @@ client.on("message", async message => {
     let alliance = args[0];
 	console.log(`This is the alliance: ${alliance} and ${args}`) 
     let castles = args.slice(1).join(' ');
-	const caste = castles.shift().toLowerCase()
+	const castle = castles.toLowerCase()
 	console.log(`This is the castle: ${castle}`)
 	
     if(!alliance || alliance !== "s" || alliance !== "z")
