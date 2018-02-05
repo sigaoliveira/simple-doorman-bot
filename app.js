@@ -218,9 +218,11 @@ if(!alliance || (alliance !== "s" && alliance !== "z"))
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance === "s") {
+		console.log(`This is the alliance: ${alliance}`);
 		const channel = message.guild.channels.find('name', 'snows');
 	}
 	if (alliance === "z") {
+		console.log(`This is the alliance: ${alliance}`);
 		const channel = message.guild.channels.find('name', 'snowz');		
 	}
 	
