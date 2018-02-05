@@ -227,8 +227,9 @@ client.on("message", async message => {
 		console.log(`This is the alliance: ${alliance}`);
 		const channel = message.guild.channels.find('name', 'snowz');		
 	}
-	
-	channel.send(`The chests refresh ${castle} in minutes!`);	
+
+	console.log(`This is the channel: ${channel}`);	
+	guild.channel.send(`The chests refresh ${castle} in minutes!`);	
   
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
