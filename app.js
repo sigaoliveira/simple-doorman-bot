@@ -210,9 +210,9 @@ client.on("message", async message => {
 		return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 	
 	let alliance = alliances.toLowerCase();	
-	console.log(`This is the alliance: ${alliance} and ${args}`);
+	//console.log(`This is the alliance: ${alliance}`);
     let castle = args.slice(1).join(' ');
-	console.log(`This is the castle: ${castle}`);
+	//console.log(`This is the castle: ${castle}`);
 	
 if(!alliance || (alliance !== "s" && alliance !== "z"))
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
@@ -223,11 +223,13 @@ if(!alliance || (alliance !== "s" && alliance !== "z"))
 	if (alliance === "z") {
 		const channel = message.guild.channels.find('name', 'snowz');		
 	}
+	
+	channel.send(`The chests refresh ${castle} in minutes!`);	
   
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
   
-	//channel.send('The chests refresh in ' + OFFSET + ' minutes!');
+
   }
   
 });
