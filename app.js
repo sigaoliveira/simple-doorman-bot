@@ -208,7 +208,7 @@ client.on("message", async message => {
     let alliance = args.slice(1).toUpperCase();
     let castle = args.slice(1).join(' ');
 	
-    if(!alliance || alliance <> "S" || alliance <> "Z")
+    if(!alliance || alliance !== "S" || alliance !== "Z")
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
 	if (alliance === "S") {
