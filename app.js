@@ -218,10 +218,10 @@ client.on("message", async message => {
 		const channel = message.guild.channels.find('name', 'snowz');		
 	}
   
-    var interval = setInterval (function () {
-    message.channel.send("123")}, 1 * 1000); 
+    //var interval = setInterval (function () {
+   // message.channel.send("123")}, 1 * 1000); 
   
-	channel.send('The chests refresh in ' + OFFSET + ' minutes!');
+	//channel.send('The chests refresh in ' + OFFSET + ' minutes!');
   }
   
 });
