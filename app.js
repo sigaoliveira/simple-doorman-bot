@@ -228,13 +228,8 @@ client.on("message", async message => {
 		var channel = message.guild.channels.find('name', 'snowz');		
 	}
 
-<<<<<<< HEAD
 	//console.log(`This is the channel: ${channel}`);
 	channel.send(`Hello @everyone! \nBefore you go offline for a while, please make sure to reinforce **${castle}!**`);	
-=======
-	console.log(`This is the channel: ${channel}`);	
-	channel.send(`The chests refresh ${castle} in minutes!`);	
->>>>>>> parent of bf18c71... installed TaskTimer module
   
     //var interval = setInterval (function () {
    // message.channel.send("123")}, 1 * 1000); 
