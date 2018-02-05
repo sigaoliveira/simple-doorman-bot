@@ -206,7 +206,7 @@ client.on("message", async message => {
 
     // slice(1) removes the first part, which here should be the user mention!
     let alliances = args[0];
-	if alliances {
+	if (typeof alliances !== 'undefined') {
 		const alliance = alliances.toLowerCase();
 	}
 	console.log(`This is the alliance: ${alliance} and ${args}`);
