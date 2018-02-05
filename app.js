@@ -211,13 +211,13 @@ client.on("message", async message => {
     let castle = args.slice(1).join(' ');
 	console.log(`This is the castle: ${castle}`)
 	
-    if(!alliance || alliance !== "s" || alliance !== "z")
+if(!alliance || (alliance !== "s" && alliance !== "z"))
       return message.reply("Please indicate a valid alliance to focus on (S or Z). Repeat the command adding S or Z and the name of the castle.");
 
-	if (alliance === "S") {
+	if (alliance === "s") {
 		const channel = message.guild.channels.find('name', 'snows');
 	}
-	if (alliance === "Z") {
+	if (alliance === "z") {
 		const channel = message.guild.channels.find('name', 'snowz');		
 	}
   
