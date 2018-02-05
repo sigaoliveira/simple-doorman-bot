@@ -205,7 +205,7 @@ client.on("message", async message => {
   if(command === "focus") {
 
     // slice(1) removes the first part, which here should be the user mention!
-    let alliance = args.slice(0);
+    let alliance = args(0);
 	console.log(`This is the alliance: ${alliance} and ${args}`) 
     let castle = args.slice(1).join(' ');
 	console.log(`This is the castle: ${castle}`)
