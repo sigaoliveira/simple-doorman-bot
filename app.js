@@ -250,6 +250,45 @@ client.on("message", async message => {
 	message.reply("All existent focus were removed")
   }
   
+  //commands to be added
+	//{!role {user} -GUEST, +Not Verified}
+	//{!setnick {user} $1+}
+	//{respond:#checkpoint}
+	//{silent}
+	//Hello {user}, we’ve updated your nick to reflect the one you use in the game (don’t worry: it will not change your nickname in other servers). You are not allowed to type on #lounge anymore.
+
+	//We need some info from you to grant you all due permissions:
+	//1. Are you already using your in game nickname? (everyone in this server should be using the same nick as it is on the game. If yours is still different, please tell us what it is)
+
+	//2. Are you SNOWS or SNOWZ?
+
+	//3. Who is your direct liege? (you are bannerman of whom?)
+
+	//{&ADMIN}
+
+	//snowz
+	//{delete}
+	//{require:T3+}
+	//{!role $1+ -SNOWS, +SNOWZ, -Not Verified}
+	//{dm:{$1+}} 
+	//Welcome to SNOWSZ alliances, {$1+}. You are free to read all available channels, but we strongly recommend you to start by {#important-stuff}. Here are some critical information that you must know (state that you didn't read this won’t work):
+	//1. SNOWS and SNOWZ are twin alliances, and you cannot attack or scout any of our members. If you need any kind of assistance look for our leaders or admins;
+	//2. You must be aware of our diplomatic relations with other alliances. Check {#important-stuff} regularly;
+	//3. Communication is critical to our success as an alliance. Make sure you are checking our server oftenly and never share anything discussed in our server with anyone outside of our alliance.
+	//We are honored to have you and counting on you to rule the seven kingdoms with us. Cheers!
+
+	//updatenick
+	//{!setnick {user} $1+}
+
+	//liegerole
+	//{!role $1+ T3+}
+
+	//lord
+	//{!role $1+ Lords}
+
+	//elite
+	//{!role $1+ Elite}
+  
 });
 
 client.login(config.token);
